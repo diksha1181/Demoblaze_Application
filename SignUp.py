@@ -7,6 +7,7 @@ import time
 
 
 driver = webdriver.Chrome()
+driver.maximize_window()
 
 driver.get("https://demoblaze.com/")
 
@@ -19,10 +20,10 @@ wait = WebDriverWait(driver,10)
 elem1 = wait.until(EC.visibility_of_element_located((By.ID ,"sign-username")))
 
 elem1 = driver.find_element(By.ID ,"sign-username")
-elem1.send_keys("newwwwwwwwwwwwwwwwwwwww_user")
+elem1.send_keys("Person2")
 
 elem2 = driver.find_element(By.ID, "sign-password")
-elem2.send_keys("userr_____________newwwwww")
+elem2.send_keys("hfdghdddgfcn")
 
 
 signup = driver.find_element(By.CSS_SELECTOR, "#signInModal .btn.btn-primary")
@@ -33,7 +34,7 @@ time.sleep(2)
 
 wait.until(EC.alert_is_present())
 alert= driver.switch_to.alert
-print("Alert Text", alert.text)
+print("Alert Text :", alert.text)
 
 alert.accept()
 
