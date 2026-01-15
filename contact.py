@@ -7,8 +7,10 @@ import time
 
 
 driver = webdriver.Chrome()
+driver.maximize_window()
 
 driver.get("https://demoblaze.com/")
+driver.maximize_window()
 
 elem = driver.find_element(By.XPATH,"//a[normalize-space()='Contact']")
 elem.send_keys(Keys.RETURN)
@@ -30,12 +32,13 @@ elem3.send_keys("Do Fast Delivery of order")
 
 
 
+time.sleep(3)
 
 send = driver.find_element(By.CSS_SELECTOR, "button[onclick='send()']")
 send.click()
 
 
-time.sleep(2)
+time.sleep(3)
 
 wait.until(EC.alert_is_present())
 alert= driver.switch_to.alert

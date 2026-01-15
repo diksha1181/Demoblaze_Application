@@ -11,18 +11,16 @@ driver.get("https://demoblaze.com/")
 
 wait = WebDriverWait(driver,10)
 
-
+time.sleep(3)
 e1 = driver.find_element(By.LINK_TEXT, "Monitors").click()
 print("Clicked Monitors Category" )
 
-
-wait = WebDriverWait(driver, 10)
-
+time.sleep(3)
 e2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Apple monitor 24']"))).click()
 
 print("Chosen the Monitor" )
 
-
+time.sleep(3)
 e2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
 
 

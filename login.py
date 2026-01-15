@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 driver = webdriver.Chrome()
+driver.maximize_window()
 
 driver.get("https://demoblaze.com/")
 
@@ -27,12 +28,12 @@ elem2 = wait.until(EC.visibility_of_element_located((By.ID, "loginpassword")))
 elem2 = driver.find_element(By.ID, "loginpassword")
 elem2.send_keys("userr_____________newwwwww")
 
-
+time.sleep(3)
 login = driver.find_element(By.CSS_SELECTOR, "#logInModal .btn.btn-primary")
 login.click()
 
 
-time.sleep(2)
+time.sleep(6)
 
 Success=driver.find_element(By.ID , "nameofuser")
 wait.until(EC.visibility_of_element_located((By.ID , "nameofuser")))

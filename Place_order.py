@@ -12,7 +12,7 @@ driver.get("https://demoblaze.com/")
 
 # Adding Phones to the cart
 
-e1 = driver.find_element(By.LINK_TEXT, "Phones").click()
+driver.find_element(By.LINK_TEXT, "Phones").click()
 print("Clicked Phones Category" )
 wait = WebDriverWait(driver, 10)
 wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Nokia lumia 1520']"))).click()
@@ -30,7 +30,7 @@ enter.send_keys(Keys.RETURN)
 
 # Adding Laptop to cart
 
-e2 = driver.find_element(By.LINK_TEXT, "Laptops").click()
+driver.find_element(By.LINK_TEXT, "Laptops").click()
 print("Clicked Laptops Category" )
 
 
@@ -52,7 +52,7 @@ alert.accept()
 
 # Viewing items in the cart
 
-e3 = driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
+driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
 print("Viewing items in the cart")
 
 

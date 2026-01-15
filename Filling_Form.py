@@ -14,18 +14,16 @@ wait = WebDriverWait(driver,10)
 
 
 
-e1 = driver.find_element(By.LINK_TEXT, "Monitors").click()
+driver.find_element(By.LINK_TEXT, "Monitors").click()
 print("Clicked Monitors Category" )
 
 
-wait = WebDriverWait(driver, 10)
-
-e2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Apple monitor 24']"))).click()
+wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Apple monitor 24']"))).click()
 
 print("Chosen the Monitor" )
 
 
-e2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
+wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
 
 
 wait.until(EC.alert_is_present())
@@ -37,7 +35,7 @@ alert.accept()
 
 
 
-e3 = driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
+driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
 
 
 time.sleep(4) 
@@ -45,6 +43,8 @@ time.sleep(4)
 wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success"))).click()
 print("Place order clicked ")
 
+
+time.sleep(3)
 
 wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,"#orderModal")))
 print("Fill Personal Details")
@@ -84,13 +84,13 @@ Form = driver.find_elements(By.XPATH,"//div[contains(@class,'showSweetAlert visi
 for elem in Form:
        print(elem.text)
 
-
+time.sleep(2)
 
 wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,".confirm.btn.btn-lg.btn-primary"))).click()
 
 driver.find_element(By.CSS_SELECTOR, "body")
 
-print("Return to Home page ")
+print("Returned to Home page ")
 
 
 driver.close()

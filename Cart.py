@@ -11,18 +11,18 @@ driver.get("https://demoblaze.com/")
 
 wait = WebDriverWait(driver,10)
 
-e1 = driver.find_element(By.LINK_TEXT, "Monitors").click()
+driver.find_element(By.LINK_TEXT, "Monitors").click()
 print("Clicked Monitors Category" )
 
 
 wait = WebDriverWait(driver, 10)
 
-e2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Apple monitor 24']"))).click()
+wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Apple monitor 24']"))).click()
 
 print("Chosen the Monitor" )
 
 
-e2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
+wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
 
 
 wait.until(EC.alert_is_present())
@@ -33,7 +33,7 @@ alert.accept()
 
 
 
-e3 = driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
+driver.find_element(By.XPATH, "//a[normalize-space()='Cart']").click()
 print("Viewing items in the cart")
 
 
@@ -46,11 +46,6 @@ elements = driver.find_elements(By.CLASS_NAME,"col-lg-8")
 
 for element in elements :
   print(element.text)
-
-
-
-
-
 
 driver.close()
 

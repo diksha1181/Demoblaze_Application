@@ -17,8 +17,7 @@ wait = WebDriverWait(driver,10)
 elem = driver.find_element(By.ID,"login2")
 elem.send_keys(Keys.RETURN)
 
-
-elem1 = wait.until(EC.visibility_of_element_located((By.ID ,"loginusername")))
+wait.until(EC.visibility_of_element_located((By.ID ,"loginusername")))
 
 elem1 = driver.find_element(By.ID ,"loginusername")
 elem1.send_keys("newwwwwwwwwwwwwwwwwwwww_user")

@@ -11,17 +11,17 @@ driver.get("https://demoblaze.com/")
 
 wait = WebDriverWait(driver,10)
 
-
+time.sleep(4)
 e1 = driver.find_element(By.LINK_TEXT, "Phones").click()
 print("Clicked Phones Category" )
 
-
-wait = WebDriverWait(driver, 10)
+time.sleep(3)
 
 e2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='Nokia lumia 1520']"))).click()
 
-print("Chosen the Phones")
+print("Chosen the Phone")
 
+time.sleep(3)
 
 e2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
 

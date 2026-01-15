@@ -9,19 +9,17 @@ driver.maximize_window()
 
 driver.get("https://demoblaze.com/")
 
-
-e1 = driver.find_element(By.LINK_TEXT, "Laptops").click()
+driver.find_element(By.LINK_TEXT, "Laptops").click()
 print("Clicked Laptops Category" )
 
 
 wait = WebDriverWait(driver, 10)
 
-e2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='MacBook Pro']"))).click()
-
+wait.until(EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='MacBook Pro']"))).click()
 print("Chosen the Laptop")
 
 
-e2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
+wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-success.btn-lg"))).click()
 
 
 wait.until(EC.alert_is_present())
